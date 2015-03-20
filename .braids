@@ -13,6 +13,13 @@
     "squashed": true,
     "revision": "c6a872a64530979f4aac46d765c577581cb7fc36"
   },
+  "vim-colors-solarized": {
+    "url": "https://github.com/altercation/vim-colors-solarized.git",
+    "remote": "master/braid/vim-colors-solarized",
+    "branch": "master",
+    "squashed": true,
+    "revision": "528a59f26d12278698bb946f8fb82a63711eec21"
+  },
   "vim-gradle": {
     "url": "https://github.com/tfnico/vim-gradle.git",
     "remote": "master/braid/vim-gradle",
