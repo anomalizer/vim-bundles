@@ -12,5 +12,12 @@
     "branch": "master",
     "squashed": true,
     "revision": "c6a872a64530979f4aac46d765c577581cb7fc36"
+  },
+  "vim-gradle": {
+    "url": "https://github.com/tfnico/vim-gradle.git",
+    "remote": "master/braid/vim-gradle",
+    "branch": "master",
+    "squashed": true,
+    "revision": "8736039c97751063af03e0608342ce054b587eeb"
   }
 }
