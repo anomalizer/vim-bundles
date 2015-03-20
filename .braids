@@ -33,5 +33,12 @@
     "branch": "master",
     "squashed": true,
     "revision": "8736039c97751063af03e0608342ce054b587eeb"
+  },
+  "vim-indent-guides": {
+    "url": "https://github.com/nathanaelkane/vim-indent-guides.git",
+    "remote": "master/braid/vim-indent-guides",
+    "branch": "master",
+    "squashed": true,
+    "revision": "eec1b629dc4cfa3986d20f21d4b4489732cd3f5a"
   }
 }
