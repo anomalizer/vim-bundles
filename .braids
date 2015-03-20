@@ -5,5 +5,12 @@
     "branch": "master",
     "squashed": true,
     "revision": "78fc26456acc701ffa121fe8d99ab77dcac994ef"
+  },
+  "python-mode": {
+    "url": "https://github.com/klen/python-mode.git",
+    "remote": "master/braid/python-mode",
+    "branch": "master",
+    "squashed": true,
+    "revision": "c6a872a64530979f4aac46d765c577581cb7fc36"
   }
 }
