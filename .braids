@@ -6,6 +6,13 @@
     "squashed": true,
     "revision": "78fc26456acc701ffa121fe8d99ab77dcac994ef"
   },
+  "powerline": {
+    "url": "https://github.com/powerline/powerline.git",
+    "remote": "master/braid/powerline",
+    "branch": "master",
+    "squashed": true,
+    "revision": "8164f42fb924f38dc5b9dd6d32063e8c3d41e504"
+  },
   "python-mode": {
     "url": "https://github.com/klen/python-mode.git",
     "remote": "master/braid/python-mode",
