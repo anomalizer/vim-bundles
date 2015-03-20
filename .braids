@@ -20,6 +20,13 @@
     "squashed": true,
     "revision": "528a59f26d12278698bb946f8fb82a63711eec21"
   },
+  "vim-flake8": {
+    "url": "https://github.com/nvie/vim-flake8.git",
+    "remote": "master/braid/vim-flake8",
+    "branch": "master",
+    "squashed": true,
+    "revision": "21bc78d9a3a17653dd5ea1f6a6c92445d23b215b"
+  },
   "vim-gradle": {
     "url": "https://github.com/tfnico/vim-gradle.git",
     "remote": "master/braid/vim-gradle",
