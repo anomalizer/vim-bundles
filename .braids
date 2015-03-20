@@ -1,0 +1,9 @@
+{
+  "jedi-vim": {
+    "url": "https://github.com/davidhalter/jedi-vim.git",
+    "remote": "master/braid/jedi-vim",
+    "branch": "master",
+    "squashed": true,
+    "revision": "78fc26456acc701ffa121fe8d99ab77dcac994ef"
+  }
+}
