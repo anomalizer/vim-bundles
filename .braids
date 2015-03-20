@@ -6,6 +6,13 @@
     "squashed": true,
     "revision": "78fc26456acc701ffa121fe8d99ab77dcac994ef"
   },
+  "minibufexpl": {
+    "url": "https://github.com/fholgado/minibufexpl.vim",
+    "remote": "master/braid/minibufexpl",
+    "branch": "master",
+    "squashed": true,
+    "revision": "ad72976ca3df4585d49aa296799f14f3b34cf953"
+  },
   "powerline": {
     "url": "https://github.com/powerline/powerline.git",
     "remote": "master/braid/powerline",
