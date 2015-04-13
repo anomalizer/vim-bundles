@@ -27,13 +27,6 @@
     "squashed": true,
     "revision": "c6a872a64530979f4aac46d765c577581cb7fc36"
   },
-  "ropevim": {
-    "url": "https://github.com/python-rope/ropevim.git",
-    "remote": "master/braid/ropevim",
-    "branch": "master",
-    "squashed": true,
-    "revision": "10773036739d3cfdc926aa99b3111b61be900984"
-  },
   "vim-colors-solarized": {
     "url": "https://github.com/altercation/vim-colors-solarized.git",
     "remote": "master/braid/vim-colors-solarized",
