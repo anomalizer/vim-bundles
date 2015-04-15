@@ -20,13 +20,6 @@
     "squashed": true,
     "revision": "8164f42fb924f38dc5b9dd6d32063e8c3d41e504"
   },
-  "python-mode": {
-    "url": "https://github.com/klen/python-mode.git",
-    "remote": "master/braid/python-mode",
-    "branch": "master",
-    "squashed": true,
-    "revision": "c6a872a64530979f4aac46d765c577581cb7fc36"
-  },
   "vim-colors-solarized": {
     "url": "https://github.com/altercation/vim-colors-solarized.git",
     "remote": "master/braid/vim-colors-solarized",
