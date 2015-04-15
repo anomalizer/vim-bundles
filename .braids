@@ -13,13 +13,6 @@
     "squashed": true,
     "revision": "ad72976ca3df4585d49aa296799f14f3b34cf953"
   },
-  "powerline": {
-    "url": "https://github.com/powerline/powerline.git",
-    "remote": "master/braid/powerline",
-    "branch": "master",
-    "squashed": true,
-    "revision": "8164f42fb924f38dc5b9dd6d32063e8c3d41e504"
-  },
   "vim-colors-solarized": {
     "url": "https://github.com/altercation/vim-colors-solarized.git",
     "remote": "master/braid/vim-colors-solarized",
