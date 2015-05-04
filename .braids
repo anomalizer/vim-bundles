@@ -1,4 +1,11 @@
 {
+  "bundle/colorschemes": {
+    "url": "https://github.com/flazz/vim-colorschemes.git",
+    "remote": "master/braid/bundle/colorschemes",
+    "branch": "master",
+    "squashed": true,
+    "revision": "81c6dd7ce3169e5ad9ba92422ba6e1ce5b074e36"
+  },
   "jedi-vim": {
     "url": "https://github.com/davidhalter/jedi-vim.git",
     "remote": "master/braid/jedi-vim",
