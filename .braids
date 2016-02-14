@@ -53,7 +53,7 @@
     "remote": "master/braid/vim-gradle",
     "branch": "master",
     "squashed": true,
-    "revision": "8736039c97751063af03e0608342ce054b587eeb"
+    "revision": "c73e37816b1fa58a019f4bea1e1a301375f93a25"
   },
   "vim-indent-guides": {
     "url": "https://github.com/nathanaelkane/vim-indent-guides.git",
