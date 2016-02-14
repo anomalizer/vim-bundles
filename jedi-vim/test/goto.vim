@@ -48,6 +48,7 @@ end
 describe 'goto_with_tabs'
     before
         set filetype=python
+        let g:jedi#use_tabs_not_buffers = 1
     end
 
     after
@@ -73,21 +74,24 @@ describe 'goto_with_tabs'
     end
 
     it 'multi_definitions'
-        put = ['import tokenize']
-        silent normal G$\d
-        Expect CurrentBufferIsModule('tokenize') == 0
-        Expect CurrentBufferIsModule('token') == 0
-        execute "normal \<CR>"
-        Expect tabpagenr('$') == 2
-        Expect winnr('$') == 1
-        Expect CurrentBufferIsModule('token') == 1
+        " This used to behave differently. Now we don't have any real multi
+        " definitions.
 
-        bd
-        silent normal G$\d
-        execute "normal j\<CR>"
-        Expect tabpagenr('$') == 2
-        Expect winnr('$') == 1
-        Expect CurrentBufferIsModule('tokenize') == 1
+        " put = ['import tokenize']
+        " silent normal G$\d
+        " Expect CurrentBufferIsModule('tokenize') == 1
+        " Expect CurrentBufferIsModule('token') == 0
+        " execute "normal \<CR>"
+        " Expect tabpagenr('$') == 2
+        " Expect winnr('$') == 1
+        " Expect CurrentBufferIsModule('token') == 1
+
+        " bd
+        " silent normal G$\d
+        " execute "normal j\<CR>"
+        " Expect tabpagenr('$') == 2
+        " Expect winnr('$') == 1
+        " Expect CurrentBufferIsModule('tokenize') == 1
     end
 end
 
@@ -122,22 +126,22 @@ describe 'goto_with_buffers'
     end
 
     it 'multi_definitions'
-        set hidden
-        put = ['import tokenize']
-        silent normal G$\d
-        Expect CurrentBufferIsModule('tokenize') == 0
-        Expect CurrentBufferIsModule('token') == 0
-        execute "normal \<CR>"
-        Expect tabpagenr('$') == 1
-        Expect winnr('$') == 1
-        Expect CurrentBufferIsModule('token') == 1
+        " set hidden
+        " put = ['import tokenize']
+        " silent normal G$\d
+        " Expect CurrentBufferIsModule('tokenize') == 0
+        " Expect CurrentBufferIsModule('token') == 0
+        " execute "normal \<CR>"
+        " Expect tabpagenr('$') == 1
+        " Expect winnr('$') == 1
+        " Expect CurrentBufferIsModule('token') == 1
 
-        bd
-        silent normal G$\d
-        execute "normal j\<CR>"
-        Expect tabpagenr('$') == 1
-        Expect winnr('$') == 1
-        Expect CurrentBufferIsModule('tokenize') == 1
+        " bd
+        " silent normal G$\d
+        " execute "normal j\<CR>"
+        " Expect tabpagenr('$') == 1
+        " Expect winnr('$') == 1
+        " Expect CurrentBufferIsModule('tokenize') == 1
     end
 end
 
@@ -170,6 +174,43 @@ describe 'goto_with_splits'
         Expect bufname('%') == ''
     end
 
+end
+
+
+describe 'goto_wildignore'
+    before
+        set filetype=python
+        set wildignore=*,with\ spaces,*.pyc
+        set hidden
+        let g:jedi#use_tag_stack = 1
+        let g:jedi#use_tabs_not_buffers = 0
+        " Need to use splits for code coverage in new_buffer()
+        let g:jedi#use_splits_not_buffers = 1
+
+        put = ['from subprocess import Popen', 'Popen']
+        Expect CurrentBufferIsModule('subprocess') == 0
+        silent normal G
+    end
+
+    after
+        bd!
+        bd!
+        set wildignore&vim
+    end
+
+    it 'restores_wildignore'
+        let before = &wildignore
+        call jedi#goto()
+        Expect getline('.') =~ 'Popen'
+        Expect &wildignore == before
+    end
+
+    it 'not_using_tagstack'
+        let g:jedi#use_tag_stack = 0
+        call jedi#goto()
+        Expect CurrentBufferIsModule('subprocess') == 1
+        Expect getline('.') =~ 'Popen'
+    end
 end
 
 
