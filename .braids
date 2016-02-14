@@ -13,6 +13,13 @@
     "squashed": true,
     "revision": "ad72976ca3df4585d49aa296799f14f3b34cf953"
   },
+  "pig.vim": {
+    "url": "https://github.com/motus/pig.vim.git",
+    "remote": "master/braid/pig.vim",
+    "branch": "master",
+    "squashed": true,
+    "revision": "4157cac950c49ca6fb59f1dec2a41f2df90a92e1"
+  },
   "vim-airline": {
     "url": "https://github.com/bling/vim-airline.git",
     "remote": "master/braid/vim-airline",
