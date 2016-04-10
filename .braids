@@ -4,7 +4,7 @@
     "remote": "master/braid/colorschemes",
     "branch": "master",
     "squashed": true,
-    "revision": "28a989b28457e38df620e4c7ab23e224aff70efe"
+    "revision": "189f5182bb70fd35d0f56fee451c3f22a2a80135"
   },
   "jedi-vim": {
     "url": "https://github.com/davidhalter/jedi-vim.git",
