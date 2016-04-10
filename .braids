@@ -67,6 +67,6 @@
     "remote": "master/braid/vim-indent-guides",
     "branch": "master",
     "squashed": true,
-    "revision": "49bde6fa30648345ffabfe55b3a095a293568a2e"
+    "revision": "705c5fdf0d79d6efa5b07997fb92b0d2f767e09a"
   }
 }
