@@ -11,7 +11,7 @@
     "remote": "master/braid/jedi-vim",
     "branch": "master",
     "squashed": true,
-    "revision": "625c568b1249db8c5f1b06a1f9371c06ba2d08b5"
+    "revision": "a0c3269420d21e48cdad77c832e2da4a290b3cb4"
   },
   "minibufexpl": {
     "url": "https://github.com/fholgado/minibufexpl.vim",
