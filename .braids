@@ -32,7 +32,7 @@
     "remote": "master/braid/vim-airline",
     "branch": "master",
     "squashed": true,
-    "revision": "168dd7970a95c0c5049fec0b101b7f53b6a22469"
+    "revision": "30f078daf569e7d5e4f7829e39316387af349b41"
   },
   "vim-colors-solarized": {
     "url": "https://github.com/altercation/vim-colors-solarized.git",
