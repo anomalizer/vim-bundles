@@ -15,6 +15,7 @@ try:
 except ImportError:
     from itertools import izip_longest as zip_longest  # Python 2
 
+import vim
 
 is_py3 = sys.version_info[0] >= 3
 if is_py3:
@@ -29,10 +30,12 @@ class PythonToVimStr(unicode):
     __slots__ = []
 
     def __new__(cls, obj, encoding='UTF-8'):
-        if is_py3 or isinstance(obj, unicode):
-            return unicode.__new__(cls, obj)
-        else:
-            return unicode.__new__(cls, obj, encoding)
+        if not (is_py3 or isinstance(obj, unicode)):
+            obj = unicode.__new__(cls, obj, encoding)
+
+        # Vim cannot deal with zero bytes:
+        obj = obj.replace('\0', '\\0')
+        return unicode.__new__(cls, obj)
 
     def __repr__(self):
         # this is totally stupid and makes no sense but vim/python unicode
@@ -90,7 +93,6 @@ def echo_highlight(msg):
         msg.replace('"', '\\"')))
 
 
-import vim
 try:
     import jedi
 except ImportError as e:
@@ -183,7 +185,7 @@ def completions():
             out = []
             for c in completions:
                 d = dict(word=PythonToVimStr(c.name[:len(base)] + c.complete),
-                         abbr=PythonToVimStr(c.name),
+                         abbr=PythonToVimStr(c.name_with_symbols),
                          # stuff directly behind the completion
                          menu=PythonToVimStr(c.description),
                          info=PythonToVimStr(c.docstring()),  # docstr
