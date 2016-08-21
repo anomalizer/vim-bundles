@@ -11,7 +11,7 @@
     "remote": "master/braid/jedi-vim",
     "branch": "master",
     "squashed": true,
-    "revision": "443e7fe555dcbd6e08a0b9e235c06f3f0cc309a4"
+    "revision": "c94a143bfb18f59095963fcde4184a164fd1d1f0"
   },
   "minibufexpl": {
     "url": "https://github.com/fholgado/minibufexpl.vim",
@@ -32,7 +32,7 @@
     "remote": "master/braid/vim-airline",
     "branch": "master",
     "squashed": true,
-    "revision": "d00f7b35d2e615ce7a120214e4615912fc09e630"
+    "revision": "62fa44f8b3a1238f4176ad5359ff0837b6263c07"
   },
   "vim-colors-solarized": {
     "url": "https://github.com/altercation/vim-colors-solarized.git",
@@ -53,7 +53,7 @@
     "remote": "master/braid/vim-fugitive",
     "branch": "master",
     "squashed": true,
-    "revision": "aac85a268e89a6c8be79341e130ac90256fadbd6"
+    "revision": "c00ebd75ac23f4080c0d0bf9453b16304a3fb316"
   },
   "vim-gradle": {
     "url": "https://github.com/tfnico/vim-gradle.git",
