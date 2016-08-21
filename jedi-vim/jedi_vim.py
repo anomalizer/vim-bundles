@@ -15,6 +15,7 @@ try:
 except ImportError:
     from itertools import izip_longest as zip_longest  # Python 2
 
+import vim
 
 is_py3 = sys.version_info[0] >= 3
 if is_py3:
@@ -29,10 +30,12 @@ class PythonToVimStr(unicode):
     __slots__ = []
 
     def __new__(cls, obj, encoding='UTF-8'):
-        if is_py3 or isinstance(obj, unicode):
-            return unicode.__new__(cls, obj)
-        else:
-            return unicode.__new__(cls, obj, encoding)
+        if not (is_py3 or isinstance(obj, unicode)):
+            obj = unicode.__new__(cls, obj, encoding)
+
+        # Vim cannot deal with zero bytes:
+        obj = obj.replace('\0', '\\0')
+        return unicode.__new__(cls, obj)
 
     def __repr__(self):
         # this is totally stupid and makes no sense but vim/python unicode
@@ -86,11 +89,10 @@ def no_jedi_warning(error=None):
 
 
 def echo_highlight(msg):
-    vim_command('echohl WarningMsg | echom "{0}" | echohl None'.format(
-        msg.replace('"', '\\"')))
+    vim_command('echohl WarningMsg | echom "jedi-vim: {0}" | echohl None'.format(
+        str(msg).replace('"', '\\"')))
 
 
-import vim
 try:
     import jedi
 except ImportError as e:
@@ -100,7 +102,10 @@ else:
     try:
         version = jedi.__version__
     except Exception as e:  # e.g. AttributeError
-        echo_highlight("Could not load jedi python module: {0}".format(e))
+        echo_highlight(
+            "Error when loading the jedi python module ({0}). "
+            "Please ensure that Jedi is installed correctly (see Installation "
+            "in the README.".format(e))
         jedi = None
     else:
         if isinstance(version, str):
@@ -183,7 +188,7 @@ def completions():
             out = []
             for c in completions:
                 d = dict(word=PythonToVimStr(c.name[:len(base)] + c.complete),
-                         abbr=PythonToVimStr(c.name),
+                         abbr=PythonToVimStr(c.name_with_symbols),
                          # stuff directly behind the completion
                          menu=PythonToVimStr(c.description),
                          info=PythonToVimStr(c.docstring()),  # docstr
@@ -245,11 +250,6 @@ def goto(mode="goto", no_output=False):
         if not definitions:
             echo_highlight("Couldn't find any definitions for this.")
         elif len(definitions) == 1 and mode != "related_name":
-            # just add some mark to add the current position to the jumplist.
-            # this is ugly, because it overrides the mark for '`', so if anyone
-            # has a better idea, let me know.
-            vim_command('normal! m`')
-
             d = list(definitions)[0]
             if d.in_builtin_module():
                 if d.is_keyword:
