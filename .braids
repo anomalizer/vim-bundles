@@ -68,5 +68,12 @@
     "branch": "master",
     "squashed": true,
     "revision": "018298ead9d3aa9cd3b4ae222f81022a33978b09"
+  },
+  "vim-scala": {
+    "url": "https://github.com/derekwyatt/vim-scala.git",
+    "remote": "master/braid/vim-scala",
+    "branch": "master",
+    "squashed": true,
+    "revision": "a6a350f7c632d0e640b57f9dcc7e123409a7bcd7"
   }
 }
