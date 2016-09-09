@@ -89,8 +89,8 @@ def no_jedi_warning(error=None):
 
 
 def echo_highlight(msg):
-    vim_command('echohl WarningMsg | echom "{0}" | echohl None'.format(
-        msg.replace('"', '\\"')))
+    vim_command('echohl WarningMsg | echom "jedi-vim: {0}" | echohl None'.format(
+        str(msg).replace('"', '\\"')))
 
 
 try:
@@ -102,7 +102,10 @@ else:
     try:
         version = jedi.__version__
     except Exception as e:  # e.g. AttributeError
-        echo_highlight("Could not load jedi python module: {0}".format(e))
+        echo_highlight(
+            "Error when loading the jedi python module ({0}). "
+            "Please ensure that Jedi is installed correctly (see Installation "
+            "in the README.".format(e))
         jedi = None
     else:
         if isinstance(version, str):
@@ -247,11 +250,6 @@ def goto(mode="goto", no_output=False):
         if not definitions:
             echo_highlight("Couldn't find any definitions for this.")
         elif len(definitions) == 1 and mode != "related_name":
-            # just add some mark to add the current position to the jumplist.
-            # this is ugly, because it overrides the mark for '`', so if anyone
-            # has a better idea, let me know.
-            vim_command('normal! m`')
-
             d = list(definitions)[0]
             if d.in_builtin_module():
                 if d.is_keyword:
