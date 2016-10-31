@@ -121,8 +121,9 @@ function! jedi#reinit_python()
 endfunction
 
 
+let s:_init_python = -1
 function! jedi#init_python()
-    if !exists('s:_init_python')
+    if s:_init_python == -1
         try
             let s:_init_python = s:init_python()
         catch
@@ -162,7 +163,19 @@ endfunction
 
 
 function! jedi#debug_info()
-    echom "Using Python version:" s:python_version
+    if s:python_version ==# 'null'
+        call s:init_python()
+    endif
+    echo 'Using Python version:' s:python_version
+    let pyeval = s:python_version == 3 ? 'py3eval' : 'pyeval'
+    PythonJedi print(' - sys.version: {0}'.format(', '.join([x.strip() for x in __import__('sys').version.split("\n")])))
+    PythonJedi print(' - site module: {0}'.format(__import__('site').__file__))
+    PythonJedi print('Jedi path: {0}'.format(jedi_vim.jedi.__file__))
+    PythonJedi print('Jedi version: {}'.format(jedi_vim.jedi.__version__))
+    echo 'jedi-vim git version: '
+    echon substitute(system('git -C '.s:script_path.' describe --tags --always --dirty'), '\v\n$', '', '')
+    echo 'jedi git submodule status: '
+    echon substitute(system('git -C '.s:script_path.' submodule status'), '\v\n$', '', '')
 endfunction
 
 
@@ -253,6 +266,13 @@ endfun
 function! jedi#py_import_completions(argl, cmdl, pos)
     PythonJedi jedi_vim.py_import_completions()
 endfun
+
+function! jedi#clear_cache(bang)
+    PythonJedi jedi_vim.jedi.cache.clear_time_caches(True)
+    if a:bang
+        PythonJedi jedi_vim.jedi.parser.utils.ParserPickling.clear_cache()
+    endif
+endfunction
 
 
 " ------------------------------------------------------------------------
