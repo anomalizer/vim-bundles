@@ -34,6 +34,13 @@
     "squashed": true,
     "revision": "0ea4daa10350797a949e4354a1dece1b1647e351"
   },
+  "vim-airline-themes": {
+    "url": "https://github.com/vim-airline/vim-airline-themes",
+    "remote": "master/braid/vim-airline-themes",
+    "branch": "master",
+    "squashed": true,
+    "revision": "e03e9f62d25f9afb04c88ec6ca66cf2098242016"
+  },
   "vim-colors-solarized": {
     "url": "https://github.com/altercation/vim-colors-solarized.git",
     "remote": "master/braid/vim-colors-solarized",
