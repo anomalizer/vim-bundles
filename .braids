@@ -46,7 +46,7 @@
     "remote": "master/braid/vim-flake8",
     "branch": "master",
     "squashed": true,
-    "revision": "e0980afa8f6cef5e5e1f93ef4ffe4b01d2e048e0"
+    "revision": "91818a7d5f5a0af5139e9adfedc9d00fa963e699"
   },
   "vim-fugitive": {
     "url": "https://github.com/tpope/vim-fugitive.git",
