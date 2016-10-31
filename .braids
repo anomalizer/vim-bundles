@@ -25,7 +25,7 @@
     "remote": "master/braid/pig.vim",
     "branch": "master",
     "squashed": true,
-    "revision": "4157cac950c49ca6fb59f1dec2a41f2df90a92e1"
+    "revision": "007612c012e11c1214cf0de7ebe838f712befda0"
   },
   "vim-airline": {
     "url": "https://github.com/bling/vim-airline.git",
