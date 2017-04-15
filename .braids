@@ -32,7 +32,7 @@
     "remote": "master/braid/vim-airline",
     "branch": "master",
     "squashed": true,
-    "revision": "0ea4daa10350797a949e4354a1dece1b1647e351"
+    "revision": "4a47cd70cd393df7451069e42ee5618753fa685d"
   },
   "vim-airline-themes": {
     "url": "https://github.com/vim-airline/vim-airline-themes",
