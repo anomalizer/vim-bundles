@@ -60,7 +60,7 @@
     "remote": "master/braid/vim-fugitive",
     "branch": "master",
     "squashed": true,
-    "revision": "58ed86e434951319ff7d438fb1096f24a51e6458"
+    "revision": "b2665cc65002c3ebf3aa771bb1b65ea8ef6b57d6"
   },
   "vim-gradle": {
     "url": "https://github.com/tfnico/vim-gradle.git",
