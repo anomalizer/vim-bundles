@@ -54,7 +54,7 @@
     "vim-indent-guides": {
       "url": "https://github.com/nathanaelkane/vim-indent-guides.git",
       "branch": "master",
-      "revision": "018298ead9d3aa9cd3b4ae222f81022a33978b09"
+      "revision": "54d889a63716ee2f1818aa2ec5082db47147147b"
     },
     "vim-scala": {
       "url": "https://github.com/derekwyatt/vim-scala.git",
