@@ -9,7 +9,7 @@
     "jedi-vim": {
       "url": "https://github.com/davidhalter/jedi-vim.git",
       "branch": "master",
-      "revision": "8e34a59045fa4385feebd7a2eec88a8005cb3af8"
+      "revision": "7f4f2db260e3e693c8b9fc91498f9299c99148c2"
     },
     "minibufexpl": {
       "url": "https://github.com/fholgado/minibufexpl.vim",
