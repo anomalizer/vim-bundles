@@ -44,7 +44,7 @@
     "vim-fugitive": {
       "url": "https://github.com/tpope/vim-fugitive.git",
       "branch": "master",
-      "revision": "b2665cc65002c3ebf3aa771bb1b65ea8ef6b57d6"
+      "revision": "a1f9596d2d884e74358bc5017a73f37e34f7b04c"
     },
     "vim-gradle": {
       "url": "https://github.com/tfnico/vim-gradle.git",
