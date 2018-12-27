@@ -19,7 +19,7 @@
     "pig.vim": {
       "url": "https://github.com/motus/pig.vim.git",
       "branch": "master",
-      "revision": "007612c012e11c1214cf0de7ebe838f712befda0"
+      "revision": "60d8a0883d3e474e61af46b581a5ce3af65e9bb5"
     },
     "vim-airline": {
       "url": "https://github.com/bling/vim-airline.git",
