@@ -4,7 +4,7 @@
     "colorschemes": {
       "url": "https://github.com/flazz/vim-colorschemes.git",
       "branch": "master",
-      "revision": "b8dff40f69f1873effbed97c759a8452ecb240ed"
+      "revision": "2f532d0564534accf09cecfa9a1e3639865367ee"
     },
     "jedi-vim": {
       "url": "https://github.com/davidhalter/jedi-vim.git",
