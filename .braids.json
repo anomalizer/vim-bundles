@@ -24,7 +24,7 @@
     "vim-airline": {
       "url": "https://github.com/bling/vim-airline.git",
       "branch": "master",
-      "revision": "4a47cd70cd393df7451069e42ee5618753fa685d"
+      "revision": "72888d87ea57761f21c9f67cd0c0faa5904795eb"
     },
     "vim-airline-themes": {
       "url": "https://github.com/vim-airline/vim-airline-themes",
