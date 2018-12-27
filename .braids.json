@@ -59,7 +59,7 @@
     "vim-scala": {
       "url": "https://github.com/derekwyatt/vim-scala.git",
       "branch": "master",
-      "revision": "a6a350f7c632d0e640b57f9dcc7e123409a7bcd7"
+      "revision": "0b909e24f31d94552eafae610da0f31040c08f2b"
     }
   }
 }
